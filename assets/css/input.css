@@ -1,6 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
 @import "tailwindcss";
 
+ol > li {
+  position: relative;
+  counter-increment: list-counter;
+  padding-left: 2.5rem;
+  list-style: none;
+}
+ol > li::before {
+  content: counter(list-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+  /* color: var(--color-rose-800); */
+}
+
 @theme {
   /* Font Families */
   --font-young-serif: "Young Serif", serif;
